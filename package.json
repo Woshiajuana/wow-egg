@@ -32,6 +32,7 @@
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
+    "apidoc": "apidoc -i app/controller -o apidoc/",
     "autod": "autod"
   },
   "ci": {
