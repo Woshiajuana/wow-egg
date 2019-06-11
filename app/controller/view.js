@@ -2,14 +2,8 @@
 
 const Controller = require('egg').Controller;
 
-/**
- *
- *
- */
-class ViewController extends Controller {
+module.exports = class ViewController extends Controller {
     async register() {
         await this.ctx.render('register/index.tpl');
     }
-}
-
-module.exports = ViewController;
+};

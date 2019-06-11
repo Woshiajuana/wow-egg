@@ -9,22 +9,26 @@
     <div class="container ">
         <form class="center-block" style="width: 50%;margin-top: 10%"
               method="POST" action="/user/register?_csrf={{ ctx.csrf | safe }}" enctype="multipart/form-data">
-            <div class="form-group ">
-                <img src="/public/images/default.jpg" id="avatarPic" class="img-circle center-block" style="width: 64px;">
-                <input type="file" id="avatarBtn" name="file" style="visibility: hidden">
-                <p class="text-center help-block">点击头像更改，只支持jpg,png格式，大小≤ 200 kb</p>
+            <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">邮箱</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username" placeholder="请输入邮箱" name="username">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="username">账号</label>
-                <input type="text" class="form-control" id="username" placeholder="用户名" name="username">
-            </div>
-            <div class="form-group">
-                <label for="password">密码</label>
+            <div class="form-group row">
+                <!--<label for="password">密码</label>-->
                 <input type="password" class="form-control" id="password" placeholder="密码" name="password">
             </div>
-            <div class="form-group">
-                <label for="phone">手机号</label>
-                <input type="text" class="form-control" id="phone" placeholder="手机号" name="phone">
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group row">
+                <!--<label for="phone">验证码</label>-->
+                <input type="text" class="form-control" id="phone" placeholder="验证码" name="phone">
+                <button type="button" class="btn btn-primary mb-2">获取验证码</button>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-info pull-right">注册</button>
