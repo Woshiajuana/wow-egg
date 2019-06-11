@@ -7,9 +7,8 @@ const Controller = require('egg').Controller;
  *
  */
 class ViewController extends Controller {
-    async index() {
-        const { ctx } = this;
-        ctx.body = 'hi, egg2';
+    async register() {
+        await this.ctx.render('register/index.tpl');
     }
 }
 
