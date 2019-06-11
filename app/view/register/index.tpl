@@ -6,36 +6,31 @@
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container ">
-        <form class="center-block" style="width: 50%;margin-top: 10%"
+    <div class="container">
+        <h2 style="font-size: 26px; color: #333; margin-top: 20%">WOW-EGG注册</h2>
+        <form class="center-block" style="width: 50%;margin-top: 20px"
               method="POST" action="/user/register?_csrf={{ ctx.csrf | safe }}" enctype="multipart/form-data">
             <div class="form-group row">
-                <label for="username" class="col-sm-2 col-form-label">邮箱</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="username" placeholder="请输入邮箱" name="username">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="username" placeholder="邮箱" name="username">
                 </div>
             </div>
             <div class="form-group row">
-                <!--<label for="password">密码</label>-->
-                <input type="password" class="form-control" id="password" placeholder="密码" name="password">
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="验证码">
                 </div>
-            </div>
-            <div class="form-group row">
-                <!--<label for="phone">验证码</label>-->
-                <input type="text" class="form-control" id="phone" placeholder="验证码" name="phone">
-                <button type="button" class="btn btn-primary mb-2">获取验证码</button>
+                <div class="col-sm-3">
+                    <button type="button" style="width: 100%" class="btn btn-primary">获取验证码</button>
+                </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-info pull-right">注册</button>
+                <button type="submit" style="width: 100%" class="btn btn-info">注册</button>
             </div>
         </form>
     </div>
     <script>
+
+        
         $('#avatarPic').bind('click', function () {
             $('#avatarBtn').click();
         });
