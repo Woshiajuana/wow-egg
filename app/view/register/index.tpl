@@ -12,15 +12,20 @@
               method="POST" action="/user/register?_csrf={{ ctx.csrf | safe }}" enctype="multipart/form-data">
             <div class="form-group row">
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="username" placeholder="邮箱" name="username">
+                    <input type="text" class="form-control" id="email" placeholder="邮箱" name="email">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-9">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="验证码">
+                    <input type="password" class="form-control" id="code" name="code" placeholder="验证码">
                 </div>
                 <div class="col-sm-3">
-                    <button type="button" style="width: 100%" class="btn btn-primary">获取验证码</button>
+                    <button type="button" style="width: 100%" id="codeBtn" class="btn btn-primary">获取验证码</button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="password" placeholder="密码" name="password">
                 </div>
             </div>
             <div class="form-group">
@@ -29,21 +34,17 @@
         </form>
     </div>
     <script>
+        $(function () {
+            $('#btnCode').on('click', function () {
+                var email = $('#emit')
+                $.post('/code/email/send?_csrf={{ ctx.csrf | safe }}', {
+                    email: $()
+                }, function (resp) {
+                    console.log(resp);
+                })
+            });
+        });
 
-        
-        $('#avatarPic').bind('click', function () {
-            $('#avatarBtn').click();
-        });
-        $('#avatarBtn').bind('change',function (e) {
-            if (window.FileReader) {
-                var reader = new FileReader();
-                reader.readAsDataURL(e.target.files[0]);
-                //监听文件读取结束后事件
-                reader.onloadend = function (e) {
-                    $('#avatarPic').attr("src",e.target.result);    //e.target.result就是最后的路径地址
-                };
-            }
-        });
     </script>
 </body>
 </html>
