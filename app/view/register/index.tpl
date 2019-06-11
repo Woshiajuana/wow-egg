@@ -10,7 +10,7 @@
         <form class="center-block" style="width: 50%;margin-top: 10%"
               method="POST" action="/user/register?_csrf={{ ctx.csrf | safe }}" enctype="multipart/form-data">
             <div class="form-group ">
-                <img src="/public/avatar/default.jpg" id="avatarPic" class="img-circle center-block" style="width: 64px;">
+                <img src="/public/images/default.jpg" id="avatarPic" class="img-circle center-block" style="width: 64px;">
                 <input type="file" id="avatarBtn" name="file" style="visibility: hidden">
                 <p class="text-center help-block">点击头像更改，只支持jpg,png格式，大小≤ 200 kb</p>
             </div>
