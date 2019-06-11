@@ -2,6 +2,11 @@
 
 const Controller = require('egg').Controller;
 
+function sleep() {
+    const endTime = new Date().getTime() + 20000;
+    while (new Date().getTime() < endTime);
+}
+
 /**
  *
  *
@@ -9,7 +14,8 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
     async index() {
         const { ctx } = this;
-        ctx.body = 'hi, egg1';
+        sleep();
+        ctx.body = 'hi, egg2';
     }
 }
 
