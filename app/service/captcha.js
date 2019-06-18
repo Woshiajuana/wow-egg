@@ -15,7 +15,7 @@ module.exports = class CaptchaService extends Service {
         const { redis } = app;
         const captcha = randomString.generate({ length: 6, charset: 'numeric' });
         const codeEmailMaxAge = ms(config.codeEmailMaxAge || '5m');
-        service.email.sendMail({
+        app.email.sendMail({
             from: 'zhigang.chen@owulia.com',
             to: '979703986@qq.com',
             subject: 'hello world',
