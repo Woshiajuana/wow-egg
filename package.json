@@ -8,13 +8,15 @@
   },
   "dependencies": {
     "egg": "^2.15.1",
-    "egg-scripts": "^2.11.0"
+    "egg-scripts": "^2.11.0",
+    "egg-value-email": "^1.0.1"
   },
   "devDependencies": {
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
     "egg-bin": "^4.11.0",
     "egg-ci": "^1.11.0",
+    "egg-email": "^1.0.2",
     "egg-mock": "^3.21.0",
     "egg-redis": "^2.4.0",
     "egg-view-nunjucks": "^2.2.0",
@@ -22,6 +24,8 @@
     "eslint": "^5.13.0",
     "eslint-config-egg": "^7.1.0",
     "ms": "^2.1.2",
+    "nodemailer": "^6.2.1",
+    "nodemailer-smtp-transport": "^2.7.4",
     "randomstring": "^1.1.5"
   },
   "engines": {
