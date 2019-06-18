@@ -28,6 +28,19 @@ module.exports = appInfo => {
         },
     };
 
+    // add email
+    config.email = {
+        client: {
+            host: 'smtp.mxhichina.com', // 主机
+            secureConnection: true, // 使用 SSL
+            port: 465, // SMTP 端口
+            auth: {
+                user: 'zhigang.chen@owulia.com',
+                pass: 'liujiaoyan1120/',
+            },
+        },
+    };
+
     // add your user config here
     const userConfig = {
         // myAppName: 'egg',
