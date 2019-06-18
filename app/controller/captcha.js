@@ -2,7 +2,7 @@
 
 const { Controller } = require('egg');
 
-module.exports = class CodeController extends Controller {
+module.exports = class CaptchaController extends Controller {
     async sendToEmail() {
         const { ctx } = this;
         const { email } = ctx.request.body;
