@@ -4,8 +4,6 @@
     "rules": {
         "arrow-parens": 0,
 
-        "quote": 1,
-
         "no-unused-vars": 0,
 
         // 强制使用一致的缩进 (indent)

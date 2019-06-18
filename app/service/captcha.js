@@ -10,16 +10,16 @@ module.exports = class CaptchaService extends Service {
      * 根据邮件生成
      * @param   email   [String]    邮箱
      * */
-    async generateByEmail(email) {
+    async emailSend(email) {
         const { logger, app, config, service } = this;
         const { redis } = app;
         const captcha = randomString.generate({ length: 6, charset: 'numeric' });
         const codeEmailMaxAge = ms(config.codeEmailMaxAge || '5m');
         service.email.sendMail({
-            from: 'qoderplus@gmail.com',
-            to: 'test_user@qq.com',
+            from: 'zhigang.chen@owulia.com',
+            to: '979703986@qq.com',
             subject: 'hello world',
-            html: `<a href='link'>点击链接进行验证</a>`,
+            html: '<a href="link">点击链接进行验证</a>',
         }, (err) => {
             logger.info(`发送邮件错误${err}`);
         });
