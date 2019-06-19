@@ -7,7 +7,7 @@ module.exports = class CaptchaController extends Controller {
         const { ctx, service } = this;
         const { email } = ctx.request.body;
         console.log(email);
-        service.captcha.emailSend(email);
+        service.captcha.sendToEmail(email);
         ctx.body = '发送成功';
     }
 };
