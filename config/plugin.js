@@ -1,5 +1,7 @@
 'use strict';
 
+const path = require('path');
+
 exports.nunjucks = {
     enable: true,
     package: 'egg-view-nunjucks',
@@ -12,5 +14,5 @@ exports.redis = {
 
 exports.email = {
     enable: true,
-    package: 'egg-email',
+    path: path.join(__dirname, '../lib/plugin/wow-egg-email'),
 };

@@ -15,15 +15,13 @@ module.exports = class CaptchaService extends Service {
         const { redis } = app;
         const captcha = randomString.generate({ length: 6, charset: 'numeric' });
         const codeEmailMaxAge = ms(config.codeEmailMaxAge || '5m');
-        app.email.sendMail({
-            from: 'zhigang.chen@owulia.com',
+        console.log('app.email.send', app.email.send);
+        await app.email.send({
             to: '979703986@qq.com',
             subject: 'hello world',
-            html: '<a href="link">点击链接进行验证</a>',
-        }, (err) => {
-            logger.info(`发送邮件错误${err}`);
+            html: captcha,
         });
-        logger.info(`CodeService.generateByEmail=> email:${email} captcha:${captcha} codeEmailMaxAge:${codeEmailMaxAge}`);
+        logger.info(`[emailSend] => email:${email} captcha:${captcha} codeEmailMaxAge:${codeEmailMaxAge}`);
         const redisKey = `captcha:${email}`;
         await redis.set(redisKey, captcha, 'EX', codeEmailMaxAge * 0.001);
     }
