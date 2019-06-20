@@ -38,7 +38,7 @@
     "nodemailer": "^4.0.1"
   },
   "deprecated": false,
-  "description": "egg 邮件服务",
+  "description": "egg 验证服务",
   "devDependencies": {
     "autod": "^2.8.0",
     "egg": "^1.3.0",
@@ -51,7 +51,7 @@
     "webstorm-disable-index": "^1.1.2"
   },
   "eggPlugin": {
-    "name": "email"
+    "name": "validate"
   },
   "engines": {
     "node": ">=6.0.0"
