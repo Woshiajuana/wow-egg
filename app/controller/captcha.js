@@ -5,9 +5,6 @@ const { Controller } = require('egg');
 module.exports = class CaptchaController extends Controller {
     async sendToEmail() {
         const { ctx, service, app } = this;
-        console.log('app.validate', app.validate)
-        console.log('app.validate', app.validate.check)
-        return;
         try {
             let { email } = await app.validate.check(ctx.request.body, (regular) => {
                 return {

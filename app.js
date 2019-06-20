@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = app => {
-  // const { logger, config } = app;
-  app.beforeStart(async () => {
-    console.log('进来了');
-  });
+    const { logger, config } = app;
+    app.beforeStart(async () => {
+        logger.info('[App] beforeStart');
+    });
 };
