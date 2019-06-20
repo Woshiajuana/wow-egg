@@ -43,8 +43,10 @@ module.exports = appInfo => {
 
     // add validate
     config.validate = {
-        regular: {
-            isEmail: value => /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value),
+        client: {
+            regular: {
+                isEmail: value => /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value),
+            },
         },
     };
 

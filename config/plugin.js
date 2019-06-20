@@ -12,10 +12,10 @@ exports.redis = {
     package: 'egg-redis',
 };
 
-exports.email = {
-    enable: true,
-    path: path.join(__dirname, '../lib/plugin/wow-egg-email'),
-};
+// exports.email = {
+//     enable: true,
+//     path: path.join(__dirname, '../lib/plugin/wow-egg-validate'),
+// };
 
 exports.validate = {
     enable: true,
