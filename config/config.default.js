@@ -43,11 +43,9 @@ module.exports = appInfo => {
 
     // add validate
     config.validate = {
-        // regular: {
-        //     testPhone () {
-        //
-        //     }
-        // },
+        regular: {
+            isEmail: value => /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value),
+        },
     };
 
     // add your user config here
