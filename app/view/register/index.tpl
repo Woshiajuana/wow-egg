@@ -37,7 +37,7 @@
         $(function () {
             $('#codeBtn').on('click', function () {
                 var email = $('#email').val();
-                if (!email) return alert('请输入邮箱');
+//                if (!email) return alert('请输入邮箱');
                 $.post('/code/email/send?_csrf={{ ctx.csrf | safe }}', {
                     email: email,
                 }, function (resp) {
