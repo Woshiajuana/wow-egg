@@ -15,11 +15,7 @@ module.exports = class CaptchaService extends Service {
         const { redis } = app;
         const captcha = randomString.generate({ length: 6, charset: 'numeric' });
         const codeEmailMaxAge = ms(config.codeEmailMaxAge || '5m');
-        await app.email.send({
-            to: '979703986@qq.com',
-            subject: 'hello world',
-            html: captcha,
-        });
+        await app.email.send({ to: email, subject: 'WOW-EGG REGISTER', html: captcha });
         logger.info(`[emailSend] => email:${email} captcha:${captcha} codeEmailMaxAge:${codeEmailMaxAge}`);
         const redisKey = `captcha:${email}`;
         await redis.set(redisKey, captcha, 'EX', codeEmailMaxAge * 0.001);
