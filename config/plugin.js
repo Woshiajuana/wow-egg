@@ -16,3 +16,8 @@ exports.email = {
     enable: true,
     path: path.join(__dirname, '../lib/plugin/wow-egg-email'),
 };
+
+exports.validate = {
+    enable: true,
+    path: path.join(__dirname, '../lib/plugin/wow-egg-validate'),
+};

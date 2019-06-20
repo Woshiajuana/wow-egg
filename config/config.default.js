@@ -41,6 +41,15 @@ module.exports = appInfo => {
         },
     };
 
+    // add validate
+    config.validate = {
+        // regular: {
+        //     testPhone () {
+        //
+        //     }
+        // },
+    };
+
     // add your user config here
     const userConfig = {
         // myAppName: 'egg',
