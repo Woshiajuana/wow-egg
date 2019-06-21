@@ -22,6 +22,9 @@ module.exports = class CaptchaController extends Controller {
                     ],
                 };
             });
+            let { email } = await ctx.validateBody({
+                email: [ 'nonempty', 'isEmail', '' ],
+            });
             console.log(email);
             await service.captcha.sendToEmail(email);
             ctx.body = '发送成功';
