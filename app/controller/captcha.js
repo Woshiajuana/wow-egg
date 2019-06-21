@@ -6,7 +6,9 @@ module.exports = class CaptchaController extends Controller {
     async sendToEmail() {
         const { ctx, service, app } = this;
         try {
-            let { email } = await app.validate.check(ctx.request.body, (regular) => {
+            let {
+                email,
+            } = await app.validate.check(ctx.request.body, (regular) => {
                 return {
                     email: [
                         {
@@ -21,7 +23,7 @@ module.exports = class CaptchaController extends Controller {
                 };
             });
             console.log(email);
-            service.captcha.sendToEmail(email);
+            await service.captcha.sendToEmail(email);
             ctx.body = '发送成功';
         } catch (err) {
             console.log('错误', err);
