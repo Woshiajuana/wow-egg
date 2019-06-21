@@ -21,3 +21,8 @@ exports.validate = {
     enable: true,
     path: path.join(__dirname, '../lib/plugin/egg-wow-validate'),
 };
+
+exports.response = {
+    enable: true,
+    path: path.join(__dirname, '../lib/plugin/egg-wow-response'),
+};
