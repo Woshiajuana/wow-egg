@@ -14,10 +14,10 @@ exports.redis = {
 
 exports.email = {
     enable: true,
-    path: path.join(__dirname, '../lib/plugin/wow-egg-email'),
+    path: path.join(__dirname, '../lib/plugin/egg-wow-email'),
 };
 
 exports.validate = {
     enable: true,
-    path: path.join(__dirname, '../lib/plugin/wow-egg-validate'),
+    path: path.join(__dirname, '../lib/plugin/egg-wow-validate'),
 };

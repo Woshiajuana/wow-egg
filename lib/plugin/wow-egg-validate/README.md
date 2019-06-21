@@ -1,2 +1,0 @@
-# wow-egg-email
-
