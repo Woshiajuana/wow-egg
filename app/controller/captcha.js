@@ -8,25 +8,13 @@ module.exports = class CaptchaController extends Controller {
         try {
             let {
                 email,
-            } = await ctx.validateBody((regular) => {
-                return {
-                    email: [
-                        {
-                            nonempty: true,
-                            prompt: '缺少必要参数',
-                        },
-                        {
-                            rule: regular.isEmail,
-                            prompt: '参数格式错误',
-                        },
-                    ],
-                };
-            });
-            let { email } = await ctx.validateBody({
-                email: [ 'nonempty', 'isEmail', '' ],
+            } = await ctx.validateBody({
+                email: [ 'nonempty', 'isEmail' ],
+                email1: [ 'nonempty', 'isEmail' ],
+                email2: [ 'nonempty', 'isEmail' ],
             });
             console.log(email);
-            await service.captcha.sendToEmail(email);
+            // await service.captcha.sendToEmail(email);
             ctx.body = '发送成功';
         } catch (err) {
             console.log('错误', err);

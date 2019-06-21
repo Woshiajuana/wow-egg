@@ -26,7 +26,8 @@
     "ms": "^2.1.2",
     "nodemailer": "^6.2.1",
     "nodemailer-smtp-transport": "^2.7.4",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "validator": "^11.0.0"
   },
   "engines": {
     "node": ">=10.0.0"
