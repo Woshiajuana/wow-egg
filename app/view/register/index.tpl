@@ -28,25 +28,21 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="button" id="submit" style="width: 100%" class="btn btn-info">注册</button>
+                <button type="button" id="submit" style="width: 100%" class="btn btn-primary">注册</button>
             </div>
         </form>
-    </div>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
     </div>
     <script>
         $(function () {
             $('#codeBtn').on('click', function () {
                 var email = $('#email').val();
-                if (!email) return $('.alert').alert();
+                if (!email) return alert('请输入邮箱');
                 $.post('/code/email/send?_csrf={{ ctx.csrf | safe }}', {
                     email: email,
-                }, function (resp) {
-                    console.log(resp);
+                }, function (res) {
+                    let { code, msg, data } = res;
+                    if (code !== 'S00001') return alert(msg);
+                    alert('发送成功');
                 })
             });
             $('#submit').on('click', function () {
@@ -58,7 +54,9 @@
                     captcha: captcha,
                     password: password,
                 }, function (resp) {
-                    console.log(resp);
+                    let { code, msg, data } = res;
+                    if (code !== 'S00001') return alert(msg);
+                    alert('注册成功');
                 });
             })
         });
