@@ -32,11 +32,18 @@
             </div>
         </form>
     </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     <script>
         $(function () {
             $('#codeBtn').on('click', function () {
                 var email = $('#email').val();
-//                if (!email) return alert('请输入邮箱');
+
+                if (!email) return $('.alert').alert();
                 $.post('/code/email/send?_csrf={{ ctx.csrf | safe }}', {
                     email: email,
                 }, function (resp) {
