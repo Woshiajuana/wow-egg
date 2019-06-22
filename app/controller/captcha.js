@@ -13,9 +13,9 @@ module.exports = class CaptchaController extends Controller {
             });
             console.log(email);
             // await service.captcha.sendToEmail(email);
-            ctx.body = '发送成功';
+            ctx.respSuccess();
         } catch (err) {
-            ctx.body = err;
+            ctx.respError(err);
         }
     }
 };
