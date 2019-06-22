@@ -44,10 +44,13 @@ module.exports = appInfo => {
     // add validate
     config.validate = {
         client: {
-            regular: {
-                isEmail: value => /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value),
-            },
+            regular: {},
         },
+    };
+
+    // add response
+    config.response = {
+        client: {},
     };
 
     // add your user config here
