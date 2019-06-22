@@ -42,7 +42,6 @@
         $(function () {
             $('#codeBtn').on('click', function () {
                 var email = $('#email').val();
-
                 if (!email) return $('.alert').alert();
                 $.post('/code/email/send?_csrf={{ ctx.csrf | safe }}', {
                     email: email,
