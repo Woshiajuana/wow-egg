@@ -15,7 +15,7 @@ module.exports = class CaptchaController extends Controller {
             // await service.captcha.sendToEmail(email);
             ctx.respSuccess();
         } catch (err) {
-            ctx.respError(err);
+            ctx.respError('F401');
         }
     }
 };
