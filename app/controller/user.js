@@ -6,10 +6,13 @@ module.exports = class UserController extends Controller {
     async register() {
         const { ctx, service, app } = this;
         try {
-            let { email, password, phone } = await ctx.validateBody({
+            let { email, password, captcha } = await ctx.validateBody({
                 email: [ 'nonempty', 'isEmail' ],
+                password: [ 'nonempty' ],
+                captcha: [ 'nonempty' ],
             });
-
+            await service.captcha.checkByEmail(email, captcha);
+            ctx.respSuccess();
         } catch (err) {
             ctx.respError(err);
         }
