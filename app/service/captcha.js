@@ -28,6 +28,6 @@ module.exports = class CaptchaService extends Service {
         const redisCaptcha = await redis.get(redisKey);
         const result = captcha === redisCaptcha;
         logger.info(`[captcha checkByEmail] => email:${email} captcha: ${captcha} redisCaptcha:${redisCaptcha} result:${result}`);
-        return result ? Promise.resolve() : Promise.reject(new Error('验证码错误'));
+        return result ? Promise.resolve() : Promise.reject('验证码错误');
     }
 };

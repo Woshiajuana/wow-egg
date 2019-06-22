@@ -8,8 +8,7 @@
 <body>
     <div class="container">
         <h2 style="font-size: 26px; color: #333; margin-top: 20%">WOW-EGG注册</h2>
-        <form class="center-block" style="width: 50%;margin-top: 20px"
-              method="POST" action="/user/register?_csrf={{ ctx.csrf | safe }}" enctype="multipart/form-data">
+        <form class="center-block" style="width: 50%;margin-top: 20px">
             <div class="form-group row">
                 <div class="col-sm-12">
                     <input type="text" class="form-control" id="email" placeholder="邮箱" name="email">
@@ -17,7 +16,7 @@
             </div>
             <div class="form-group row">
                 <div class="col-sm-9">
-                    <input type="password" class="form-control" id="code" name="code" placeholder="验证码">
+                    <input type="password" class="form-control" id="captcha" name="captcha" placeholder="验证码">
                 </div>
                 <div class="col-sm-3">
                     <button type="button" style="width: 100%" id="codeBtn" class="btn btn-primary">获取验证码</button>
@@ -29,7 +28,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" style="width: 100%" class="btn btn-info">注册</button>
+                <button type="button" id="submit" style="width: 100%" class="btn btn-info">注册</button>
             </div>
         </form>
     </div>
@@ -44,6 +43,18 @@
                     console.log(resp);
                 })
             });
+            $('#submit').on('click', function () {
+                var email = $('#email').val();
+                var captcha = $('#captcha').val();
+                var password = $('#password').val();
+                $.post('/user/register?_csrf={{ ctx.csrf | safe }}', {
+                    email: email,
+                    captcha: captcha,
+                    password: password,
+                }, function (resp) {
+                    console.log(resp);
+                });
+            })
         });
 
     </script>

@@ -4,6 +4,8 @@
     "rules": {
         "prefer-const": "off",
 
+        "prefer-promise-reject-errors": "off",
+
         "arrow-parens": 0,
 
         "no-unused-vars": 0,

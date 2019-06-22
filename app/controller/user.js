@@ -8,8 +8,8 @@ module.exports = class UserController extends Controller {
         try {
             let { email, password, captcha } = await ctx.validateBody({
                 email: [ 'nonempty', 'isEmail' ],
-                password: [ 'nonempty' ],
                 captcha: [ 'nonempty' ],
+                password: [ 'nonempty' ],
             });
             await service.captcha.checkByEmail(email, captcha);
             ctx.respSuccess();
