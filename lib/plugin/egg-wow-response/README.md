@@ -1,2 +1,0 @@
-# egg-wow-email
-
